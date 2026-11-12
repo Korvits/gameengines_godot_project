@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://fobyqqyvtc3s"]
+
+[ext_resource type="PackedScene" uid="uid://co3lwpsyvbeew" path="res://scenes/levels/TallGrassLevel.tscn" id="1_72ix8"]
+[ext_resource type="PackedScene" uid="uid://dvrv746lbqd4q" path="res://scenes/ui/game_ui.tscn" id="2_2vj2h"]
+
+[node name="Main" type="Node2D" unique_id=413665420]
+
+[node name="TallGrassLevel" parent="." unique_id=1782765720 instance=ExtResource("1_72ix8")]
+
+[node name="Scanner" parent="TallGrassLevel/Player" parent_id_path=PackedInt32Array(1782765720, 318898951) index="3" unique_id=432423656 node_paths=PackedStringArray("spawner")]
+spawner = NodePath("../../DiscSpawner")
+
+[node name="GameUI" parent="." unique_id=731617627 instance=ExtResource("2_2vj2h")]
+
+[node name="HUD" parent="GameUI/Control" parent_id_path=PackedInt32Array(731617627, 674130844) index="0" unique_id=549151253 node_paths=PackedStringArray("summary_label", "gadget_label", "money_label", "message_label", "camp_prompt", "camp_prompt_panel", "controls_label", "field_count_label", "disc_spawner", "scanner")]
+summary_label = NodePath("UpperPanel/HBoxContainer/HBoxContainer/BackpackSummary")
+gadget_label = NodePath("UpperPanel/HBoxContainer/HBoxContainer/GadgetLabel")
+money_label = NodePath("UpperPanel/HBoxContainer/MoneyLabel")
+message_label = NodePath("MessageLabel")
+camp_prompt = NodePath("CampPromptPanel/CampPrompt")
+camp_prompt_panel = NodePath("CampPromptPanel")
+controls_label = NodePath("BottomPanel/ControlsLabel")
+field_count_label = NodePath("UpperPanel/HBoxContainer/FieldCountLabel")
+disc_spawner = NodePath("../../../TallGrassLevel/DiscSpawner")
+scanner = NodePath("../../../TallGrassLevel/Player/Scanner")
+
+[editable path="TallGrassLevel"]
+[editable path="TallGrassLevel/Player"]
+[editable path="GameUI"]

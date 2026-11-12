@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://gp3w1tckfd7g"]
+
+[ext_resource type="Script" uid="uid://b2mubbi5uydcd" path="res://scenes/ui/backpack_panel.gd" id="1_npydh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bma8u"]
+bg_color = Color(0, 0, 0, 0.78039217)
+corner_radius_top_left = 35
+corner_radius_top_right = 35
+corner_radius_bottom_right = 35
+corner_radius_bottom_left = 35
+
+[node name="BackpackPanel" type="Panel" unique_id=377553541 node_paths=PackedStringArray("contents_label", "total_label")]
+offset_left = 272.0
+offset_top = 150.0
+offset_right = 752.0
+offset_bottom = 490.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_bma8u")
+script = ExtResource("1_npydh")
+contents_label = NodePath("MarginContainer/VBoxContainer/ContentsScroll/ContentsLabel")
+total_label = NodePath("MarginContainer/VBoxContainer/TotalLabel")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1130006113]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=712409476]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=186626773]
+layout_mode = 2
+text = "Backpack"
+
+[node name="ContentsScroll" type="ScrollContainer" parent="MarginContainer/VBoxContainer" unique_id=713327206]
+custom_minimum_size = Vector2(0, 170)
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="ContentsLabel" type="Label" parent="MarginContainer/VBoxContainer/ContentsScroll" unique_id=742712160]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Your backpack is empty."
+
+[node name="TotalLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1350359590]
+layout_mode = 2
+text = "Total value: 0"
+
+[node name="HelpLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1726510356]
+layout_mode = 2
+text = "Press Tab to close"

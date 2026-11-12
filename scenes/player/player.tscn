@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://umduvcuvpkcv"]
+
+[ext_resource type="Script" uid="uid://cp48725yhqscp" path="res://scenes/player/player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://dcvoqb6y7tped" path="res://tiles/tilemap.png" id="2_lvxji"]
+[ext_resource type="Script" uid="uid://c23gk3xv0t7li" path="res://scenes/player/search_controller.gd" id="3_gmlin"]
+[ext_resource type="Script" uid="uid://dbcw4uy4bjykd" path="res://scenes/player/scanner.gd" id="4_lvxji"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k577x"]
+size = Vector2(24, 28)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wu8im"]
+radius = 90.0
+
+[node name="Player" type="CharacterBody2D" unique_id=318898951 groups=["player"]]
+z_index = 5
+motion_mode = 1
+script = ExtResource("1_g2els")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=116712918]
+scale = Vector2(2, 2)
+texture = ExtResource("2_lvxji")
+region_enabled = true
+region_rect = Rect2(17, 153, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1231299563]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_k577x")
+
+[node name="SearchController" type="Node2D" parent="." unique_id=577959764]
+z_index = 5
+script = ExtResource("3_gmlin")
+
+[node name="SearchArea" type="Area2D" parent="SearchController" unique_id=577169499]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SearchController/SearchArea" unique_id=844561520]
+shape = SubResource("CircleShape2D_wu8im")
+
+[node name="SearchProgress" type="ProgressBar" parent="SearchController" unique_id=1575298685]
+modulate = Color(1, 0.83137256, 0.28235295, 1)
+offset_left = -32.0
+offset_top = -39.0
+offset_right = 32.0
+offset_bottom = -27.0
+offset_transform_position = Vector2(-25, 40)
+mouse_filter = 2
+show_percentage = false
+
+[node name="Scanner" type="Node2D" parent="." unique_id=432423656]
+script = ExtResource("4_lvxji")

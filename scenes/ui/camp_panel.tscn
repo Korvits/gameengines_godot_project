@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://buhsfkorombd7"]
+
+[ext_resource type="Script" uid="uid://blck0e221ylib" path="res://scenes/ui/camp_panel.gd" id="1_y0ycv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fct72"]
+bg_color = Color(0, 0, 0, 0.78039217)
+corner_radius_top_left = 35
+corner_radius_top_right = 35
+corner_radius_bottom_right = 35
+corner_radius_bottom_left = 35
+
+[node name="CampPanel" type="Panel" unique_id=1782645035 node_paths=PackedStringArray("sale_label", "sell_button", "refill_button", "close_button", "tournament_button", "walk_button", "search_button", "capacity_button", "luck_button", "value_button", "scanner_button")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -270.0
+offset_top = -235.0
+offset_right = 270.0
+offset_bottom = 235.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fct72")
+script = ExtResource("1_y0ycv")
+sale_label = NodePath("MarginContainer/VBoxContainer/SaleLabel")
+sell_button = NodePath("MarginContainer/VBoxContainer/SellButton")
+refill_button = NodePath("MarginContainer/VBoxContainer/RefillButton")
+close_button = NodePath("MarginContainer/VBoxContainer/CloseButton")
+tournament_button = NodePath("MarginContainer/VBoxContainer/TournamentButton")
+walk_button = NodePath("MarginContainer/VBoxContainer/WalkUpgradeButton")
+search_button = NodePath("MarginContainer/VBoxContainer/SearchUpgradeButton")
+capacity_button = NodePath("MarginContainer/VBoxContainer/CapacityUpgradeButton")
+luck_button = NodePath("MarginContainer/VBoxContainer/LuckUpgradeButton")
+value_button = NodePath("MarginContainer/VBoxContainer/ValueUpgradeButton")
+scanner_button = NodePath("MarginContainer/VBoxContainer/ScannerUpgradeButton")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=400772279]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1983337951]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1154293996]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.83137256, 0.28235295, 1)
+text = "Camp"
+
+[node name="SaleLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1030617709]
+layout_mode = 2
+text = "Your Backpack is empty."
+
+[node name="RefillButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=267064921]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 0.83137256, 0.28235295, 1)
+text = "Replenish field"
+
+[node name="SellButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=972884110]
+layout_mode = 2
+focus_mode = 0
+text = "Sell all discs"
+
+[node name="WalkUpgradeButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1540636316]
+layout_mode = 2
+focus_mode = 0
+text = "Walking Speed"
+
+[node name="SearchUpgradeButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1053203235]
+layout_mode = 2
+focus_mode = 0
+text = "Searching Speed"
+
+[node name="CapacityUpgradeButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=438758744]
+layout_mode = 2
+focus_mode = 0
+text = "Backpack capacity"
+
+[node name="LuckUpgradeButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=819023852]
+layout_mode = 2
+focus_mode = 0
+text = "Luck"
+
+[node name="ValueUpgradeButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1506516511]
+layout_mode = 2
+focus_mode = 0
+text = "Sale Value"
+
+[node name="ScannerUpgradeButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=406921425]
+layout_mode = 2
+focus_mode = 0
+text = "Scanner
+"
+
+[node name="TournamentButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1814357092]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 0.83137256, 0.28235295, 1)
+text = "Enter tournament"
+
+[node name="CloseButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=555124114]
+layout_mode = 2
+focus_mode = 0
+text = "Leave camp menu"

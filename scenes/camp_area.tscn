@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://1tm6tui3virc"]
+
+[ext_resource type="Script" uid="uid://bqr3c8p66jr7e" path="res://scenes/levels/camp_area.gd" id="1_xs66l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p37tw"]
+size = Vector2(200, 496)
+
+[node name="CampArea" type="Area2D" unique_id=869439630]
+collision_layer = 0
+script = ExtResource("1_xs66l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=727173241]
+position = Vector2(0, 16)
+shape = SubResource("RectangleShape2D_p37tw")

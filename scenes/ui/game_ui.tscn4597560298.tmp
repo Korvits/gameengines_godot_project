@@ -1,0 +1,287 @@
+[gd_scene format=3 uid="uid://dvrv746lbqd4q"]
+
+[ext_resource type="Script" uid="uid://cuijo2i6pqvb8" path="res://scenes/ui/game_ui.gd" id="1_gwk6t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gwk6t"]
+bg_color = Color(0.12955844, 0.1295585, 0.12955838, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xjfbv"]
+bg_color = Color(0.12941177, 0.12941177, 0.12941177, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wu8im"]
+bg_color = Color(0.19215687, 0.19215687, 0.19215687, 0.74509805)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bma8u"]
+bg_color = Color(0, 0, 0, 0.78039217)
+corner_radius_top_left = 35
+corner_radius_top_right = 35
+corner_radius_bottom_right = 35
+corner_radius_bottom_left = 35
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fct72"]
+bg_color = Color(0, 0, 0, 0.78039217)
+corner_radius_top_left = 35
+corner_radius_top_right = 35
+corner_radius_bottom_right = 35
+corner_radius_bottom_left = 35
+
+[node name="GameUI" type="CanvasLayer" unique_id=731617627]
+layer = 10
+script = ExtResource("1_gwk6t")
+
+[node name="UpperPanel" type="Panel" parent="." unique_id=1409482236]
+offset_left = -2.0
+offset_right = 1025.0
+offset_bottom = 56.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_gwk6t")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="UpperPanel" unique_id=435307366]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 31.0
+offset_right = 644.0
+grow_vertical = 2
+theme_override_constants/separation = 97
+
+[node name="GameNameLabel" type="Label" parent="UpperPanel/HBoxContainer2" unique_id=472929964]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.83137256, 0.28235295, 1)
+theme_override_font_sizes/font_size = 20
+text = "DISC HUNT"
+horizontal_alignment = 1
+
+[node name="MoneyLabel" type="Label" parent="UpperPanel/HBoxContainer2" unique_id=266731779]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.83137256, 0.28235295, 1)
+theme_override_font_sizes/font_size = 18
+text = "Money: 0"
+
+[node name="FieldCountLabel" type="Label" parent="UpperPanel/HBoxContainer2" unique_id=1285807537]
+layout_mode = 2
+text = "Discs left: 10"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UpperPanel" unique_id=953629823]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -448.0
+offset_top = 1.0
+offset_right = -34.0
+offset_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/separation = 18
+
+[node name="BackpackSummary" type="Label" parent="UpperPanel/HBoxContainer" unique_id=724001835]
+layout_mode = 2
+text = "Backpack: 0 / 5 
+Value :0"
+
+[node name="GadgetLabel" type="Label" parent="UpperPanel/HBoxContainer" unique_id=1617097385]
+layout_mode = 2
+text = "Gadget: Empty"
+
+[node name="BottomPanel" type="Panel" parent="." unique_id=2020503538]
+offset_top = 600.0
+offset_right = 1024.0
+offset_bottom = 640.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xjfbv")
+
+[node name="ControlsLabel" type="Label" parent="BottomPanel" unique_id=1386457050]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.65882355)
+theme_override_font_sizes/font_size = 14
+text = "Move - WASD / Arrows   |   Hold Space -  Search/Collect   |   Tab - Backpack   |   F - Camp   |   Q - Scanner   |   Z -  Toggle controls"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MessageLabel" type="Label" parent="." unique_id=1896818910]
+offset_left = 353.0
+offset_top = 562.0
+offset_right = 393.0
+offset_bottom = 585.0
+
+[node name="CampPromptPanel" type="Panel" parent="." unique_id=1128610320]
+offset_left = 138.0
+offset_top = 329.0
+offset_right = 216.845
+offset_bottom = 351.575
+theme_override_styles/panel = SubResource("StyleBoxFlat_wu8im")
+metadata/_edit_group_ = true
+
+[node name="CampPrompt" type="Label" parent="CampPromptPanel" unique_id=1462332435]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.8666667)
+theme_override_font_sizes/font_size = 9
+text = "F: Open camp"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackpackPanel" type="Panel" parent="." unique_id=1669289778]
+offset_left = 272.0
+offset_top = 150.0
+offset_right = 752.0
+offset_bottom = 490.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_bma8u")
+
+[node name="MarginContainer" type="MarginContainer" parent="BackpackPanel" unique_id=1313786257]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BackpackPanel/MarginContainer" unique_id=173653540]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="TitleLabel" type="Label" parent="BackpackPanel/MarginContainer/VBoxContainer" unique_id=1558997068]
+layout_mode = 2
+text = "Backpack"
+
+[node name="ContentsScroll" type="ScrollContainer" parent="BackpackPanel/MarginContainer/VBoxContainer" unique_id=953587691]
+custom_minimum_size = Vector2(0, 170)
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="ContentsLabel" type="Label" parent="BackpackPanel/MarginContainer/VBoxContainer/ContentsScroll" unique_id=1048162547]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Your backpack is empty."
+
+[node name="TotalLabel" type="Label" parent="BackpackPanel/MarginContainer/VBoxContainer" unique_id=1301346024]
+layout_mode = 2
+text = "Total value: 0"
+
+[node name="HelpLabel" type="Label" parent="BackpackPanel/MarginContainer/VBoxContainer" unique_id=98810765]
+layout_mode = 2
+text = "Press Tab to close"
+
+[node name="CampPanel" type="Panel" parent="." unique_id=1536331256]
+offset_left = 242.0
+offset_top = 85.0
+offset_right = 782.0
+offset_bottom = 555.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_fct72")
+
+[node name="MarginContainer" type="MarginContainer" parent="CampPanel" unique_id=596380251]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CampPanel/MarginContainer" unique_id=1309478764]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="TitleLabel" type="Label" parent="CampPanel/MarginContainer/VBoxContainer" unique_id=171287456]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.83137256, 0.28235295, 1)
+text = "Camp"
+
+[node name="SaleLabel" type="Label" parent="CampPanel/MarginContainer/VBoxContainer" unique_id=1063729084]
+layout_mode = 2
+text = "Your Backpack is empty."
+
+[node name="SellButton" type="Button" parent="CampPanel/MarginContainer/VBoxContainer" unique_id=1192121140]
+layout_mode = 2
+focus_mode = 0
+text = "Sell all discs"
+
+[node name="WalkUpgradeButton" type="Button" parent="CampPanel/MarginContainer/VBoxContainer" unique_id=37238621]
+layout_mode = 2
+focus_mode = 0
+text = "Walking Speed"
+
+[node name="SearchUpgradeButton" type="Button" parent="CampPanel/MarginContainer/VBoxContainer" unique_id=732730682]
+layout_mode = 2
+focus_mode = 0
+text = "Searching Speed"
+
+[node name="CapacityUpgradeButton" type="Button" parent="CampPanel/MarginContainer/VBoxContainer" unique_id=1663446653]
+layout_mode = 2
+focus_mode = 0
+text = "Backpack capacity"
+
+[node name="LuckUpgradeButton" type="Button" parent="CampPanel/MarginContainer/VBoxContainer" unique_id=609975466]
+layout_mode = 2
+focus_mode = 0
+text = "Luck"
+
+[node name="ValueUpgradeButton" type="Button" parent="CampPanel/MarginContainer/VBoxContainer" unique_id=235941484]
+layout_mode = 2
+focus_mode = 0
+text = "Sale Value"
+
+[node name="ScannerUpgradeButton" type="Button" parent="CampPanel/MarginContainer/VBoxContainer" unique_id=119575584]
+layout_mode = 2
+focus_mode = 0
+text = "Scanner
+"
+
+[node name="RefillButton" type="Button" parent="CampPanel/MarginContainer/VBoxContainer" unique_id=2040436217]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 0.83137256, 0.28235295, 1)
+text = "Replenish field"
+
+[node name="CloseButton" type="Button" parent="CampPanel/MarginContainer/VBoxContainer" unique_id=1886397898]
+layout_mode = 2
+focus_mode = 0
+text = "Leave camp menu"
+
+[node name="PickupSound" type="AudioStreamPlayer" parent="." unique_id=659585643]
+volume_db = -12.0
+
+[node name="SaleSound" type="AudioStreamPlayer" parent="." unique_id=1477688776]
+volume_db = -12.0
+
+[node name="PurchaseSound" type="AudioStreamPlayer" parent="." unique_id=1554046230]
+volume_db = -12.0
+
+[node name="CampSign" type="Label" parent="." unique_id=456392768]
+offset_left = 50.0
+offset_top = 108.0
+offset_right = 129.0
+offset_bottom = 147.0
+theme_override_colors/font_color = Color(1, 0.83137256, 0.28235295, 1)
+theme_override_font_sizes/font_size = 28
+text = "CAMP"
+
+[node name="CampDescription" type="Label" parent="." unique_id=1399065475]
+offset_left = 50.0
+offset_top = 148.0
+offset_right = 188.0
+offset_bottom = 197.0
+theme_override_colors/font_color = Color(1, 1, 1, 0.65882355)
+text = "Sell your finds.
+Gear up. Go again"

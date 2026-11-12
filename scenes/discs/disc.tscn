@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dyt4bei1ma7ud"]
+
+[ext_resource type="Script" uid="uid://bcscaxosibkg2" path="res://scenes/discs/disc.gd" id="1_35qr7"]
+[ext_resource type="Texture2D" uid="uid://dcvoqb6y7tped" path="res://tiles/tilemap.png" id="2_35qr7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6sy3g"]
+radius = 12.0
+
+[node name="Disc" type="Area2D" unique_id=164308583]
+z_index = 2
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_35qr7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=61324473]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_35qr7")
+region_enabled = true
+region_rect = Rect2(103, 69, 14, 11)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1679868763]
+shape = SubResource("CircleShape2D_6sy3g")
